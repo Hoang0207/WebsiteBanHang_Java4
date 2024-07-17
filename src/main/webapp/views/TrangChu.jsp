@@ -4,12 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Trang chủ</title>
 <link rel="stylesheet" href="/WebsiteBanHang_Java4/bootstrap/css/bootstrap.min.css">
 </head>
-<body>
-	<div class="text-center fs-4 my-3 text-primary">Dự án nhóm 5 lớp SOF3011.01 cao đẳng FPT Polytechnic</div>
+<body class="m-0">
+	<%@include file = "Header.jsp" %>
+	<div style="height: 600px" class="bg-body-secondary"></div>
+	<%@include file="Footer.jsp" %>
 	
+	
+	<script src="https://kit.fontawesome.com/c6bc02ad3b.js" crossorigin="anonymous"></script>
 	<script src="/WebsiteBanHang_Java4/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

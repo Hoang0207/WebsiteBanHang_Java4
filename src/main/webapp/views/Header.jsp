@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<nav class="navbar navbar-expand-lg">
 	  <div class="container-fluid">
 	    <a class="navbar-brand ms-4" href="#">
 	    	<img src="/WebsiteBanHang_Java4/image/BrandIcon.png">
@@ -20,11 +20,11 @@
 	    </button>
 	    <div class="collapse navbar-collapse" id="navbarText">
 	      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-	      <span class="navbar-text fs-3">
+	      <span class="navbar-text fs-4">
 	        <a class="me-4 text-primary text-decoration-none"><i class="fa-solid fa-house"></i>Trang chủ</a>
 	        <a class="me-4 text-primary text-decoration-none mt-3"><i class="fa-solid fa-circle-user fs-2"></i>Tài khoản</a>
 	        <img src="/WebsiteBanHang_Java4/image/Line.png" class="me-4">
-	        <a class="me-5 text-primary text-decoration-none"><i class="fa-solid fa-cart-shopping"></i></a>
+	        <a class="me-4 text-primary text-decoration-none"><i class="fa-solid fa-cart-shopping"></i></a>
 	      </span>
 	    </div>
 	  </div>
