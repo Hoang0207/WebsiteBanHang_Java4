@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
-.vertical-line {
-	width: 1px;
-	height: 20px;
-	background-color: black;
+.line {
+	height: 50px;
+}
+
+.brandImg {
+	height: 55px;
 }
