@@ -24,6 +24,9 @@
 						<div class="fs-2 fst-italic fw-bolder text-center py-3">
 							QUẢN LÝ SẢN PHẨM
 						</div>
+						<div class="fs-2 fst-italic fw-bolder text-center py-3">
+							QUẢN LÝ SẢN PHẨM
+						</div>
 					</div>
 				</div>
 			</div>
