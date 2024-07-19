@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,6 @@
                         <span class="visually-hidden">Next</span>
                     </button>
            </div>
-	
 			
 			<div class="row mt-4 pb-4 ps-3 pe-1">
 				<div class="col-md-9 rounded pt-4 pb-2 px-4 bg-light">
@@ -59,6 +59,26 @@
 	                        <button class="btn btn-secondary" >Xóa lọc</button>
 	                    </div>
 	                </div>
+	                <jsp:include page="CardSanPham.jsp">
+	                   	<jsp:param value="${sanPham}" name="sanPham"/>
+	                 </jsp:include>
+					<nav aria-label="Page navigation example">
+	                    <ul class="pagination pagination-lg justify-content-center mb-4 mt-3">
+	                        <li class="page-item">
+	                            <a class="page-link" href="#" aria-label="Previous">
+	                                <span aria-hidden="true">&laquo;</span>
+	                            </a>
+	                        </li>
+	                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+	                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+	                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+	                        <li class="page-item">
+	                            <a class="page-link" href="#" aria-label="Next">
+	                                <span aria-hidden="true">&raquo;</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </nav>
 				</div>
 				<div class="col-md-3">
 	                <div class="card">
