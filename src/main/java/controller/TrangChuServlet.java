@@ -17,11 +17,11 @@ public class TrangChuServlet extends HttpServlet {
 	@SuppressWarnings("deprecation")
 	public static List<SanPham> listSanPham = new LinkedList<SanPham>(
 			Arrays.asList(new SanPham("Laptop Asus VivoBook 14X", 23490000, "hinh1.png"),
-					new SanPham("Laptop ASUS ProArt Studiobook", 69490000, "hinh2.png"),
-					new SanPham("Laptop MSI Modern 14 011VN", 9990000, "hinh3.png"),
+					new SanPham("Laptop ASUS ProArt", 69490000, "hinh2.png"),
+					new SanPham("Laptop MSI Modern 14", 9990000, "hinh3.png"),
 					new SanPham("Laptop Lenovo V15 G3 ABA", 9990000, "hinh4.png"),
 					new SanPham("Bo mạch chủ ASUS Strix B760", 5390000, "hinh5.png"),
-					new SanPham("Bo mạch chủ GIGABYTE H610M", 2190000, "hinh6.png")));
+					new SanPham("Bo mạch chủ H610M", 2190000, "hinh6.png")));
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

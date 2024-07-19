@@ -19,7 +19,7 @@
 					<div class="card-body p-0">
 						<img
 							src="/WebsiteBanHang_Java4/image/TrangChu/SanPham/${sanPham.getHinhAnh()}"
-							class="img-fluid">
+							class="img-fluid" style="height: 250px">
 					</div>
 					<div class="card-footer">
 						<strong>${sanPham.getGiaBan()} VNĐ</strong>
