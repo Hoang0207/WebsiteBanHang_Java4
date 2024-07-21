@@ -24,6 +24,17 @@
 	font-size: 2rem; /* Kích thước chữ lớn hơn */
 	padding: 10px 20px; /* Kích thước của nút */
 	border-radius: 8px; 
+	}
+	   
+        .close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border: none;
+	background: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -36,7 +47,13 @@
 		data-bs-keyboard="false" tabindex="-1"
 		aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog">
+
 			<div class="modal-content">
+					<button type="button" class="close-btn" data-bs-dismiss="modal"
+						aria-label="Close">
+						<i class="fa-regular fa-circle-xmark"></i>
+					</button>
+			
 				<h3 class="modal-title w-100 text-center mt-4 fw-bold"
 					id="staticBackdropLabel">QUÊN MẬT KHẨU</h3>
 
@@ -73,13 +90,17 @@
 
 						</div>
 					</div>
-					
 					 <div class="container d-flex justify-content-center mt-4 bg-white p-3">
-                   
-                    <a href="MatKhauMoi.jsp" class="btn btn-outline-danger border-0">
-                        <i class="fa-solid fa-download"></i>
+                    <a href="GuiMa.jsp" class="btn btn-outline-danger border-0 me-2">
+                        <i class="fa-solid fa-backward"></i>
+                    </a>
+                    <a href="DangNhap.jsp" class="btn btn-outline-danger border-0">
+                       <i class="fa-solid fa-download"></i>
+
                     </a>
                 </div>
+					
+				
 					
 					
 					
