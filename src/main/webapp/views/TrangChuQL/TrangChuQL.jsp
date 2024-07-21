@@ -21,7 +21,7 @@
 				</div>
 				<div class="col-md-9 pe-5 ps-0">
 					<div class=" bg-light rounded-3 pb-3">
-						<%@include file="QuanLySanPham.jsp" %>
+						<%@include file="QuanLyNguoiDung.jsp" %>
 					</div>
 				</div>
 			</div>

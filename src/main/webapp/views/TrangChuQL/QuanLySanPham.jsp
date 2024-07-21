@@ -16,7 +16,7 @@
 			<div class="input-group mb-4">
 				<span class="input-group-text text-bg-secondary" id="basic-addon1">Mã
 					sản phẩm</span> <input type="text" class="form-control"
-					placeholder="Tối đa 6 ký tự" aria-label="Username"
+					placeholder="" aria-label="Username"
 					aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group mb-4">
