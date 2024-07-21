@@ -20,19 +20,14 @@
 					</div>
 				</div>
 				<div class="col-md-9 pe-5 ps-0">
-					<div style="height: 700px" class=" bg-light rounded-3">
-						<div class="fs-2 fst-italic fw-bolder text-center py-3">
-							QUẢN LÝ SẢN PHẨM
-						</div>
-						<div class="fs-2 fst-italic fw-bolder text-center py-3">
-							QUẢN LÝ SẢN PHẨM
-						</div>
+					<div class=" bg-light rounded-3 pb-3">
+						<%@include file="QuanLySanPham.jsp" %>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<%@include file="/views/Footer.jsp"%>
 
 
