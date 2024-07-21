@@ -21,7 +21,29 @@
 				</div>
 				<div class="col-md-9 pe-5 ps-0">
 					<div class=" bg-light rounded-3 pb-3">
-						<%@include file="QuanLyNguoiDung.jsp" %>
+						<c:choose>
+							<c:when test="${uri == 'sanpham'}">
+								<%@include file="QuanLySanPham.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'nguoidung'}">
+								<%@include file="QuanLyNguoiDung.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'donhang'}">
+								<%@include file="QuanLyDonHang.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'chungloai'}">
+								<%@include file="QuanLyChungLoai.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'nhacungcap'}">
+								<%@include file="QuanLyNhaCungCap.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'thuoctinhdacbiet'}">
+								<%@include file="QuanLyThuocTinhDacBiet.jsp"%>
+							</c:when>
+							<c:otherwise>
+								<%@include file="XemThongKe.jsp"%>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 			</div>

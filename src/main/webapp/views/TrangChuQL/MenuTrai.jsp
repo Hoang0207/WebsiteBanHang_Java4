@@ -9,14 +9,14 @@
 <link rel="stylesheet" href="/WebsiteBanHang_Java4/bootstrap/css/bootstrap.min.css">
 </head>
 <body class="m-0">
-	<form action="" class="text-center pt-3">
-		<button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold">Quản lý sản phẩm</button>
-		<button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold">Quản lý người dùng</button>
-		<button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold">Quản lý đơn hàng</button>
-		<button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold">Quản lý chủng loại</button>
-		<button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold">Quản lý nhà cung cấp</button>
-		<button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold">Quản lý thuộc tính đặc biệt</button>
-		<button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold">Xem thống kê </button>
+	<form action="" class="text-center pt-3" formethod="GET">
+		<button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLySanPham">Quản lý sản phẩm</button>
+    <button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung">Quản lý người dùng</button>
+    <button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyDonHang">Quản lý đơn hàng</button>
+    <button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyChungLoai">Quản lý chủng loại</button>
+    <button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNhaCungCap">Quản lý nhà cung cấp</button>
+    <button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyThuocTinhDacBiet">Quản lý thuộc tính đặc biệt</button>
+    <button type="submit" class="btn btn-info mb-4 w-100 py-2 fw-semibold" formaction="/WebsiteBanHang_Java4/TrangChu/XemThongKe">Xem thống kê</button>
 	</form>
 	
 	
