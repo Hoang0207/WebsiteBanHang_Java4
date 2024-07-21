@@ -24,12 +24,13 @@
 
 .text-left-custom {
 	text-align: left;
-	margin-left:  50px; /* Khoảng cách từ lề trái */
+	margin-left: 50px; /* Khoảng cách từ lề trái */
 }
- .icon-custom {
-      font-size: 2rem; /* Thay đổi kích thước biểu tượng */
-      margin-right: 10px; /* Khoảng cách bên phải của biểu tượng */
-    }
+
+.icon-custom {
+	font-size: 2rem; /* Thay đổi kích thước biểu tượng */
+	margin-right: 10px; /* Khoảng cách bên phải của biểu tượng */
+}
 </style>
 </head>
 <body>
@@ -73,7 +74,7 @@
 										class="form-control form-control-no-border" name="Password"
 										id="Password" placeholder="Password"> <label
 										for="Password">Mật khẩu</label> <a
-									<p><a href="#" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Bạn quên mật khẩu?</a></p>
+									<p><a href="QuenMatKhau/GuiMa.jsp" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Bạn quên mật khẩu?</a></p>
 
 
 								</div>
