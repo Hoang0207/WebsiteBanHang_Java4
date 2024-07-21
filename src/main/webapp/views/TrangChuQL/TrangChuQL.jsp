@@ -20,19 +20,36 @@
 					</div>
 				</div>
 				<div class="col-md-9 pe-5 ps-0">
-					<div style="height: 700px" class=" bg-light rounded-3">
-						<div class="fs-2 fst-italic fw-bolder text-center py-3">
-							QUẢN LÝ SẢN PHẨM
-						</div>
-						<div class="fs-2 fst-italic fw-bolder text-center py-3">
-							QUẢN LÝ SẢN PHẨM
-						</div>
+					<div class=" bg-light rounded-3 pb-3">
+						<c:choose>
+							<c:when test="${uri == 'sanpham'}">
+								<%@include file="QuanLySanPham.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'nguoidung'}">
+								<%@include file="QuanLyNguoiDung.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'donhang'}">
+								<%@include file="QuanLyDonHang.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'chungloai'}">
+								<%@include file="QuanLyChungLoai.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'nhacungcap'}">
+								<%@include file="QuanLyNhaCungCap.jsp"%>
+							</c:when>
+							<c:when test="${uri == 'thuoctinhdacbiet'}">
+								<%@include file="QuanLyThuocTinhDacBiet.jsp"%>
+							</c:when>
+							<c:otherwise>
+								<%@include file="XemThongKe.jsp"%>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<%@include file="/views/Footer.jsp"%>
 
 
