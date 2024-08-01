@@ -1,9 +1,11 @@
 package entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,8 +33,8 @@ public class NguoiDung {
 	@Column(name="gioi_tinh")
 	private String gioiTinh;
 	
-	@Temporal(TemporalType.DATE)
-	Date bornDay = new Date();
+	@Column(name="")@Temporal(TemporalType.DATE)
+	Date ngay_sinh = new Date();
 	
 	@Column(name="dia_chi")
 	private String diaChi;
@@ -40,6 +42,12 @@ public class NguoiDung {
 	@Column(name="hinh_anh")
 	private String hinhAnh;
 
+	@OneToMany(mappedBy = "donHangNguoiDung")
+	List<DonHang> listDonHang;
+	
+	@OneToMany(mappedBy = "gioHangNguoiDung")
+	List<GioHang> listGioHang;
+	
 	public NguoiDung() {
 		
 	}
@@ -100,12 +108,12 @@ public class NguoiDung {
 		this.gioiTinh = gioiTinh;
 	}
 
-	public Date getBornDay() {
-		return bornDay;
+	public Date getNgay_sinh() {
+		return ngay_sinh;
 	}
 
-	public void setBornDay(Date bornDay) {
-		this.bornDay = bornDay;
+	public void setNgay_sinh(Date ngay_sinh) {
+		this.ngay_sinh = ngay_sinh;
 	}
 
 	public String getDiaChi() {
