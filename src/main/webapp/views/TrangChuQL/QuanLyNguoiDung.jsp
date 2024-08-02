@@ -119,8 +119,7 @@
 			<textarea class="form-control" aria-label="With textarea"></textarea>
 		</div>
 	</div>
-	<%@include file="Data.jsp"%>
-
+	<jsp:include page="Data.jsp" />
 
 
 

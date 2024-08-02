@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<div
-		class="d-flex flex-column justify-content-center align-items-center px-5">
+		class="d-flex flex-column justify-content-center align-items-center px-4">
 		<div class="d-flex justify-content-between align-items-center w-100">
 			<select class="form-select w-50 me-3"
 				aria-label="Default select example">
@@ -32,9 +33,28 @@
 			<img src="/WebsiteBanHang_Java4/image/TrangChuQL/reset.png"
 				style="height: 48px">
 		</div>
-		<div class="border border-black d-flex justify-content-center align-items-center w-100 fs-2 rounded mb-3 mt-1" style="height: 350px">
-			BẢNG CHỨA DỮ LIỆU
-		</div>
+		<table class="table table-bordered mb-3 mt-2">
+			<thead>
+				<tr>
+					<c:forEach var="tableHeader" items="${tableHeader}">
+						<th>${tableHeader}</th>
+					</c:forEach>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="row" items="${tableData}">
+					<tr>
+						<c:forEach var="cell" items="${row}">
+							<td>${cell}</td>
+						</c:forEach>
+						<td>
+							<a href="#">Sửa</a>
+							<a href="#">Xóa</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 
 
