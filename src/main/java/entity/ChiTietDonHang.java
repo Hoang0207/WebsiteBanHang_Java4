@@ -2,6 +2,7 @@ package entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -10,7 +11,7 @@ import javax.persistence.UniqueConstraint;
 
 @Entity@Table(name="don_hang_chi_tiet", uniqueConstraints = {@UniqueConstraint(columnNames = {"ma_sp","ma_dh"})})
 public class ChiTietDonHang {
-	@Id
+	@Id @GeneratedValue
 	@Column(name="ma_don_hang_chi_tiet")
 	private int maDHCT;
 	

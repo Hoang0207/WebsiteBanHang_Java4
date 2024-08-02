@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,7 +17,7 @@ import javax.persistence.UniqueConstraint;
 
 @Entity @Table(name="don_hang", uniqueConstraints = {@UniqueConstraint(columnNames = {"ma_nd"})})
 public class DonHang {
-	@Id
+	@Id @GeneratedValue
 	@Column(name="ma_don_hang")
 	private int maDh;
 	
