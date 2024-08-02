@@ -2,13 +2,19 @@ package entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-@Entity@Table(name="gio_hang",uniqueConstraints = {@UniqueConstraint(columnNames = {"ma_nd","ma_sp"})})
+@Entity
+@Table(name="gio_hang",uniqueConstraints = {@UniqueConstraint(columnNames = {"ma_nd","ma_sp"})})
 public class GioHang {
+	@Id
+	@Column(name="ma_gio_hang")
+	private int maGioHang;
+	
 	@ManyToOne@JoinColumn(name="ma_nd")
 	NguoiDung gioHangNguoiDung;
 	

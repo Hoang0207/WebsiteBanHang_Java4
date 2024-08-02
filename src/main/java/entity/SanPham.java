@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -13,7 +14,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name = "san_pham", uniqueConstraints = { @UniqueConstraint(columnNames = { "ma_cl", "ma_ttdb", "ma_ncc" }) })
 public class SanPham {
-
+	@Id
 	@Column(name = "ma_san_pham")
 	private String maSanPham;
 
@@ -39,7 +40,7 @@ public class SanPham {
 	private String hinhAnh;
 	
 	@OneToMany(mappedBy = "donHangSanPham")
-	List<DonHang> listDonHang;
+	List<ChiTietDonHang> listChiTietDonHang;
 	
 	@OneToMany(mappedBy = "gioHangSanPham")
 	List<GioHang> listGioHang;

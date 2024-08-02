@@ -85,35 +85,37 @@ INSERT INTO san_pham VALUES
 	('SP005', 'Bo mạch chủ ASUS Strix B760', 10, 4990000, 'CL002','TTDB005','NCC005',null,'hinh5.png')
 
 CREATE TABLE don_hang(
-	ma_don_hang VARCHAR(10) PRIMARY KEY NOT NULL,
+	ma_don_hang INT IDENTITY(1,1) PRIMARY KEY,
 	ngay_lap_don_hang DATE NOT NULL,
 	ma_nd VARCHAR(50) NOT NULL,
 	FOREIGN KEY (ma_nd) REFERENCES nguoi_dung(ma_nguoi_dung)
 )
 
 CREATE TABLE don_hang_chi_tiet(
+	ma_don_hang_chi_tiet INT IDENTITY(1,1) PRIMARY KEY,
 	ma_sp VARCHAR(10) NOT NULL,
-	ma_dh VARCHAR(10) NOT NULL,
+	ma_dh INT NOT NULL,
 	so_luong INT NOT NULL
 	FOREIGN KEY (ma_sp) REFERENCES san_pham(ma_san_pham),
 	FOREIGN KEY (ma_dh) REFERENCES don_hang(ma_don_hang)
 )
 
 INSERT INTO don_hang VALUES
-	('DH001', '2024-7-15','ND001'),
-	('DH002', '2024-1-20','ND001'),
-	('DH003', '2023-8-20','ND002'),
-	('DH004', '2023-5-20','ND002'),
-	('DH005', '2023-2-12','ND003')
+	('2024-7-15','ND001'),
+	('2024-1-20','ND001'),
+	('2023-8-20','ND002'),
+	('2023-5-20','ND002'),
+	('2023-2-12','ND003')
 
 INSERT INTO don_hang_chi_tiet VALUES
-	('SP001','DH001',2),
-	('SP002','DH002',2),
-	('SP002','DH003',1),
-	('SP004','DH004',3),
-	('SP005','DH005',4)
+	('SP001',1,2),
+	('SP002',2,2),
+	('SP002',3,1),
+	('SP004',4,3),
+	('SP005',5,4)
 
 CREATE TABLE gio_hang(
+	ma_gio_hang INT IDENTITY(1,1) PRIMARY KEY,
 	ma_nd VARCHAR(50) NOT NULL,
 	ma_sp VARCHAR(10) NOT NULL, 
 	so_luong INT NOT NULL,

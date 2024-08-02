@@ -4,11 +4,13 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity @Table(name="nha_cung_cap")
 public class NhaCungCap {
+	@Id
 	@Column(name="ma_nha_cung_cap")
 	private String maNhaCungCap;
 	
