@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -136,6 +137,7 @@
 	font-size: 1.5rem;
 	cursor: pointer;
 }
+
 table th {
 	text-decoration: none; /* Xóa gạch dưới nếu có */
 }
@@ -167,34 +169,145 @@ table th {
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg py-1">
-		<div class="container-fluid">
-			<a class="navbar-brand ms-4" href="/WebsiteBanHang_Java4/TrangChu">
-				<img src="/WebsiteBanHang_Java4/image/BrandIcon.png"
-				style="height: 55px">
-			</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarText"
-				aria-controls="navbarText" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarText">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-				<span class="navbar-text fs-4"> <a
-					class="me-4 text-primary text-decoration-none" href="/WebsiteBanHang_Java4/TrangChu"><i
-						class="fa-solid fa-house me-1"></i>Trang chủ</a> <a
-					class="me-4 text-primary text-decoration-none"
-					data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-						class="fa-solid fa-circle-user fs-2 me-1"></i>Tài khoản</a> <img
-					src="/WebsiteBanHang_Java4/image/Line.png" style="height: 50px"
-					class="me-4"> <a
-					class="me-4 text-primary text-decoration-none" href="/WebsiteBanHang_Java4/views/GioHang/GioHang.jsp"><i
-						class="fa-solid fa-cart-shopping"></i></a>
-				</span>
-			</div>
-		</div>
-	</nav>
+	<c:choose>
+		<c:when test="${not empty sessionScope.user and sessionScope.user.vaiTro==0 }">
+			<nav class="navbar navbar-expand-lg py-1">
+				<div
+					class="container-fluid d-flex justify-content-between align-items-center">
+					<a class="navbar-brand ms-4" href="/WebsiteBanHang_Java4/TrangChu">
+						<img src="/WebsiteBanHang_Java4/image/BrandIcon.png"
+						style="height: 55px">
+					</a>
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarText"
+						aria-controls="navbarText" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarText">
+						<div class="navbar-nav me-auto mb-2 mb-lg-0"></div>
+						<div
+							class="navbar-text d-flex justify-content-center align-items-center">
+							<a class="me-4 text-primary text-decoration-none fs-3"
+								href="/WebsiteBanHang_Java4/TrangChu"> <i
+								class="fa-solid fa-house me-1"></i>Trang chủ
+							</a>
+
+							<!-- Dropdown menu cho Tài khoản -->
+							<div class="dropdown me-4">
+								<a
+									class="text-primary text-decoration-none dropdown-toggle fs-3"
+									href="#" id="dropdownAccount" role="button"
+									data-bs-toggle="dropdown" aria-expanded="false"> <i
+									class="fa-solid fa-circle-user fs-2 me-1"></i>Tài khoản
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownAccount">
+									<li><a class="dropdown-item"
+										href="/WebsiteBanHang_Java4/ThongTinTaiKhoanServlet">Thông tin
+											tài khoản</a></li>
+									<li><a class="dropdown-item"
+										href="/WebsiteBanHang_Java4/LichSuMuaHangServlet">Lịch sử mua hàng</a></li>
+									<li><a class="dropdown-item"
+										href="/WebsiteBanHang_Java4/DangXuatServlet">Đăng xuất</a></li>
+								</ul>
+							</div>
+
+							<img src="/WebsiteBanHang_Java4/image/Line.png"
+								style="height: 50px" class="me-4"> <a
+								class="text-primary text-decoration-none me-4"
+								href="/WebsiteBanHang_Java4/views/GioHang/GioHang.jsp"> <i
+								class="fa-solid fa-cart-shopping fs-3"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+		</c:when>
+		<c:when test="${not empty sessionScope.user and sessionScope.user.vaiTro==1 }">
+				<nav class="navbar navbar-expand-lg py-1">
+				<div
+					class="container-fluid d-flex justify-content-between align-items-center">
+					<a class="navbar-brand ms-4" href="/WebsiteBanHang_Java4/TrangChu">
+						<img src="/WebsiteBanHang_Java4/image/BrandIcon.png"
+						style="height: 55px">
+					</a>
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarText"
+						aria-controls="navbarText" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarText">
+						<div class="navbar-nav me-auto mb-2 mb-lg-0"></div>
+						<div
+							class="navbar-text d-flex justify-content-center align-items-center">
+							<a class="me-4 text-primary text-decoration-none fs-3"
+								href="/WebsiteBanHang_Java4/TrangChu"> <i
+								class="fa-solid fa-house me-1"></i>Trang chủ
+							</a>
+
+							<!-- Dropdown menu cho Tài khoản -->
+							<div class="dropdown me-4">
+								<a
+									class="text-primary text-decoration-none dropdown-toggle fs-3"
+									href="#" id="dropdownAccount" role="button"
+									data-bs-toggle="dropdown" aria-expanded="false"> <i
+									class="fa-solid fa-circle-user fs-2 me-1"></i>Tài khoản
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownAccount">
+									<li><a class="dropdown-item"
+										href="/WebsiteBanHang_Java4/TrangChu/QuanLySanPham">Quản lý</a></li>
+									<li><a class="dropdown-item"
+										href="/WebsiteBanHang_Java4/DangXuat">Đăng xuất</a></li>
+								</ul>
+							</div>
+								
+							<img src="/WebsiteBanHang_Java4/image/Line.png"
+								style="height: 50px" class="me-4">	
+							<a class="me-4 text-primary text-decoration-none fs-3"
+								href="/WebsiteBanHang_Java4/TrangChu/QuanLySanPham"> <i
+								class="fa-solid fa-list-check me-1"></i>Quản lý
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</c:when>
+		<c:otherwise>
+			<nav class="navbar navbar-expand-lg py-1">
+				<div class="container-fluid">
+					<a class="navbar-brand ms-4" href="/WebsiteBanHang_Java4/TrangChu">
+						<img src="/WebsiteBanHang_Java4/image/BrandIcon.png"
+						style="height: 55px">
+					</a>
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarText"
+						aria-controls="navbarText" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarText">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+						<span class="navbar-text fs-4"> <a
+							class="me-4 text-primary text-decoration-none"
+							href="/WebsiteBanHang_Java4/TrangChu"><i
+								class="fa-solid fa-house me-1"></i>Trang chủ</a> <a
+							class="me-4 text-primary text-decoration-none"
+							data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+								class="fa-solid fa-circle-user fs-2 me-1"></i>Tài khoản</a> <img
+							src="/WebsiteBanHang_Java4/image/Line.png" style="height: 50px"
+							class="me-4"> <a
+							class="me-4 text-primary text-decoration-none"
+							href="/WebsiteBanHang_Java4/views/GioHang/GioHang.jsp"><i
+								class="fa-solid fa-cart-shopping"></i></a>
+						</span>
+					</div>
+				</div>
+			</nav>
+		</c:otherwise>
+	</c:choose>
+
 
 	<div class="modal fade modal-lg" id="exampleModal" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
