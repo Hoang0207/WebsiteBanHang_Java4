@@ -120,5 +120,20 @@ public class SanPham {
 		this.nhaCungCap = nhaCungCap;
 	}
 
+	public List<ChiTietDonHang> getListChiTietDonHang() {
+		return listChiTietDonHang;
+	}
+
+	public void setListChiTietDonHang(List<ChiTietDonHang> listChiTietDonHang) {
+		this.listChiTietDonHang = listChiTietDonHang;
+	}
+
+	public List<GioHang> getListGioHang() {
+		return listGioHang;
+	}
+
+	public void setListGioHang(List<GioHang> listGioHang) {
+		this.listGioHang = listGioHang;
+	}
 	
 }

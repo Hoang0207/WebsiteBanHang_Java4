@@ -57,5 +57,12 @@ public class DonHang {
 	public void setDonHangNguoiDung(NguoiDung donHangNguoiDung) {
 		this.donHangNguoiDung = donHangNguoiDung;
 	}
-	
+
+	public List<ChiTietDonHang> getListCTDH() {
+		return listCTDH;
+	}
+
+	public void setListCTDH(List<ChiTietDonHang> listCTDH) {
+		this.listCTDH = listCTDH;
+	}
 }

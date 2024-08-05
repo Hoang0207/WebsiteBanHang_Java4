@@ -134,4 +134,20 @@ public class NguoiDung {
 		this.hinhAnh = hinhAnh;
 	}
 
+	public List<DonHang> getListDonHang() {
+		return listDonHang;
+	}
+
+	public void setListDonHang(List<DonHang> listDonHang) {
+		this.listDonHang = listDonHang;
+	}
+
+	public List<GioHang> getListGioHang() {
+		return listGioHang;
+	}
+
+	public void setListGioHang(List<GioHang> listGioHang) {
+		this.listGioHang = listGioHang;
+	}
+
 }

@@ -52,5 +52,13 @@ public class GioHang {
 	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
 	}
+
+	public int getMaGioHang() {
+		return maGioHang;
+	}
+
+	public void setMaGioHang(int maGioHang) {
+		this.maGioHang = maGioHang;
+	}
 	
 }
