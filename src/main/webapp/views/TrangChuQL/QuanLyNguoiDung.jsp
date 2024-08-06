@@ -11,7 +11,7 @@
 <body>
 	<div class="fs-2 fst-italic fw-bolder text-center pt-4 pb-3">QUẢN
 		LÝ NGƯỜI DÙNG</div>
-	<form>
+	<form method="post">
 		<div class="row mt-3 mb-4">
 			<div class="col-md-7 ps-5 pt-2">
 				<div class="input-group mb-4">
@@ -49,14 +49,14 @@
 					class="d-flex justify-content-between align-items-center mb-4 border border-secondary-subtle rounded pe-2">
 					<div class="text-bg-secondary p-2">Vai trò</div>
 					<div class="form-check">
-						<input class="form-check-input" type="radio" name="vaiTro"
-							<c:if test="${nd.getVaiTro() == 1 }">checked</c:if>
+						<input class="form-check-input" type="radio" name="vaiTro" checked="checked"
+							${nd.getVaiTro() == 1 ? 'checked' : 'unchecked'} value="1"
 							id="flexRadioDefault1"> <label class="form-check-label"
 							for="flexRadioDefault1">Quản trị</label>
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" name="vaiTro"
-							<c:if test="${nd.getVaiTro() == 0 }">checked</c:if>
+							<c:if test="${nd.getVaiTro() == 0 }">checked</c:if> value="0"
 							id="flexRadioDefault2"> <label class="form-check-label"
 							for="flexRadioDefault2">Khách hàng</label>
 					</div>
@@ -65,20 +65,20 @@
 					class="d-flex justify-content-between align-items-center mb-4 border border-secondary-subtle rounded pe-2">
 					<div class="text-bg-secondary p-2">Giới tính</div>
 					<div class="form-check">
-						<input class="form-check-input" type="radio" name="gioiTinh"
-							<c:if test="${nd.getGioiTinh() == 'nam' }">checked</c:if>
+						<input class="form-check-input" type="radio" name="gioiTinh" checked="checked"
+							${nd.getGioiTinh() == 'nam' ? 'checked' : 'unchecked'} value="nam"
 							id="flexRadioDefault1"> <label class="form-check-label"
 							for="flexRadioDefault1">Nam</label>
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" name="gioiTinh"
-							<c:if test="${nd.getGioiTinh() == 'nữ' }">checked</c:if>
+							<c:if test="${nd.getGioiTinh() == 'nữ' }">checked</c:if> value="nữ"
 							id="flexRadioDefault2"> <label class="form-check-label"
 							for="flexRadioDefault2">Nữ</label>
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" name="gioiTinh"
-							<c:if test="${nd.getGioiTinh() == 'khác' }">checked</c:if>
+							<c:if test="${nd.getGioiTinh() == 'khác' }">checked</c:if> value="khác"
 							id="flexRadioDefault3"> <label class="form-check-label"
 							for="flexRadioDefault3">Khác</label>
 					</div>
@@ -107,18 +107,18 @@
 					ấn vào hình để chỉnh sửa</div>
 				<div class="row w-100 px-5">
 					<div class="col-md-6 d-flex flex-column align-items-end ps-5 pe-2">
-						<button type="submit"
+						<button type="submit" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/them"
 							class="btn btn-outline-success my-2 d-flex justify-content-center align-items-center w-75">
 							Thêm<i class="fa-solid fa-circle-plus ms-2 fs-4"></i>
 						</button>
-						<button type="submit"
+						<button type="submit" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/xoa/?id=${nd.getMaNguoiDung()}"
 							class="btn btn-outline-danger mt-1 d-flex justify-content-center align-items-center w-75">
 							Xóa<i class="fa-regular fa-trash-can ms-2 fs-4"></i>
 						</button>
 					</div>
 					<div
 						class="col-md-6 d-flex flex-column align-items-start pe-5 ps-2">
-						<button type="submit"
+						<button type="submit" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/capNhat/?id=${nd.getMaNguoiDung()}"
 							class="btn btn-outline-warning my-2 d-flex justify-content-center align-items-center w-75">
 							Sửa<i class="fa-solid fa-pencil ms-2 fs-4"></i>
 						</button>

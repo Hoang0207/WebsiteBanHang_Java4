@@ -48,8 +48,27 @@
 							<td>${cell}</td>
 						</c:forEach>
 						<td>
-							<a href="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/sua/?id=${row[0] }">Sửa</a>
-							<a href="#">Xóa</a>
+							<c:choose>
+								<c:when test="${uri == 'sanpham'}">
+					
+								</c:when>
+								<c:when test="${uri == 'nguoidung'}">
+									<a href="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/sua/?id=${row[0] }">Sửa</a>
+									<a href="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/xoa/?id=${row[0]}">Xóa</a>
+								</c:when>
+								<c:when test="${uri == 'donhang'}">
+						
+								</c:when>
+								<c:when test="${uri == 'chungloai'}">
+						
+								</c:when>
+								<c:when test="${uri == 'nhacungcap'}">
+							
+								</c:when>
+								<c:when test="${uri == 'thuoctinhdacbiet'}">
+						
+								</c:when>
+							</c:choose>
 						</td>
 					</tr>
 				</c:forEach>
