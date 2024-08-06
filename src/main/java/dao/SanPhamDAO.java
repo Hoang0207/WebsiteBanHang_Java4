@@ -20,4 +20,16 @@ public class SanPhamDAO {
 		return em.find(SanPham.class, id);
 	}
 	
+	public List<SanPham> getSanPhamTheoTrang(int trang, int soSanPhamMoiTrang){
+		TypedQuery<SanPham> query = em.createQuery("From SanPham", SanPham.class);
+		query.setFirstResult((trang-1)*soSanPhamMoiTrang);
+		query.setMaxResults(soSanPhamMoiTrang);
+		return query.getResultList();
+	}
+	
+	public long getTongSoSanPham() {
+		TypedQuery<Long> query = em.createQuery("Select count(s) from SanPham s", Long.class);
+		return query.getSingleResult();
+	}
+	
 }

@@ -12,22 +12,20 @@
 <body>
 	<div class="row row-cols-1 row-cols-md-3 g-4">
 		<c:forEach var="sanPham" items="${sanPham}">
-			<a href="/WebsiteBanHang_Java4/views/ThongTinSanPham/ThongTinSanPham.jsp" class="text-decoration-none">
-				<div class="col">
-					<div class="card text-center border-secondary mb-2">
-						<div class="card-header text-bg-secondary">
-							${sanPham.getTenSanPham()}</div>
-						<div class="card-body p-0">
-							<img
-								src="/WebsiteBanHang_Java4/image/TrangChu/SanPham/${sanPham.getHinhAnh()}"
-								class="img-fluid" style="height: 250px">
-						</div>
-						<div class="card-footer">
-							<strong>${sanPham.getGiaBan()} VNĐ</strong>
-						</div>
+			<div class="col">
+				<div class="card text-center border-secondary mb-2">
+					<div class="card-header text-bg-secondary">
+						${sanPham.tenSanPham}</div>
+					<div class="card-body p-0">
+						<img
+							src="/WebsiteBanHang_Java4/image/TrangChu/SanPham/${sanPham.hinhAnh}"
+							class="img-fluid" style="height: 250px">
+					</div>
+					<div class="card-footer">
+						<strong>${sanPham.giaBan} VNĐ</strong>
 					</div>
 				</div>
-			</a>
+			</div>
 		</c:forEach>
 	</div>
 

@@ -29,9 +29,33 @@ public class TrangChuServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<SanPham> listSanPham = spDAO.findAll();
-		req.setAttribute("sanPham", listSanPham);
-		req.getRequestDispatcher("/views/TrangChu/TrangChu.jsp").forward(req, resp);
+		int trang = 1;
+		int soSanPhamMoiTrang = 6;
+		
+		try {
+            if(req.getParameter("trang") != null) {
+                trang = Integer.parseInt(req.getParameter("trang"));
+            }
+        
+            List<SanPham> listSanPham = spDAO.getSanPhamTheoTrang(trang, soSanPhamMoiTrang);
+            long tongSoSanPham = spDAO.getTongSoSanPham();
+            int tongSoTrang = (int) Math.ceil((double) tongSoSanPham / soSanPhamMoiTrang);
+        
+            req.setAttribute("sanPham", listSanPham);
+            req.setAttribute("tongSoTrang", tongSoTrang);
+            req.setAttribute("trangHienTai", trang);
+        
+            req.getRequestDispatcher("/views/TrangChu/TrangChu.jsp").forward(req, resp);
+        } catch (NumberFormatException e) {
+            // Xử lý lỗi khi parse số trang
+            e.printStackTrace();
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Tham số trang không hợp lệ.");
+        } catch (Exception e) {
+            // Xử lý lỗi chung
+            e.printStackTrace();
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Có lỗi xảy ra trong quá trình xử lý.");
+        }
+
 	}
 
 	@Override

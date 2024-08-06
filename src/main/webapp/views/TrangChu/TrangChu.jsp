@@ -15,6 +15,7 @@
 			<%@include file="QuangCao.jsp" %>
 			<div class="row mt-4 pb-4 ps-3 pe-1">
 				<div class="col-md-9 rounded pt-4 pb-2 px-4 bg-light">
+					<!-- 
 					<div class="row mx-2 mt-2 mb-4">
 	                    <div class="d-flex col-md-6">
 	                        <label class="fw-semibold me-2 mt-2">GIÁ TIỀN</label>
@@ -28,13 +29,14 @@
 	                        <button class="btn btn-secondary" >Xóa lọc</button>
 	                    </div>
 	                </div>
+					 -->
 	                <jsp:include page="CardSanPham.jsp">
 	                   	<jsp:param value="${sanPham}" name="sanPham"/>
 	                 </jsp:include>
 					<%@include file="PhanTrang.jsp" %>
 				</div>
 				<div class="col-md-3">
-	                <div class="card">
+	                <div class="card mb-3">
 	                    <div class="card-body">
 	                        <div class="row">
 	                            <img src="/WebsiteBanHang_Java4/image/TrangChu/xeHang.png" alt="" class="img-fluid col-md-5">
@@ -46,11 +48,13 @@
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="card mt-3 mb-3">
+	                <!-- 
+	                	<div class="card mt-3 mb-3">
 	                    <div class="card-body">
 	                        <input type="text" class="form-control" placeholder="Keywords" ng-model="keyWord">
 	                    </div>
 	                </div>
+	                 -->
 	                <%@include file="MenuPhai.jsp" %>
 	            </div>
 			</div>
