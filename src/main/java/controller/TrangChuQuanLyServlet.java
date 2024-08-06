@@ -28,9 +28,8 @@ public class TrangChuQuanLyServlet extends HttpServlet {
 		if (uri.contains("QuanLySanPham")) {
 			req.setAttribute("uri", "sanpham");
 		} else if (uri.contains("QuanLyNguoiDung")) { //Chức năng quản lý người dùng
-			req.setAttribute("uri", "nguoidung");
+			req.getSession().setAttribute("uri", "nguoidung");
 			tableHeader = new String[] {"Mã người dùng","Tên người dùng","Email","Số điện thoại","Giới tính","Vai trò","Hành động"};
-			System.out.println(Arrays.toString(tableHeader));
 			List<NguoiDung> listNd = ndDAO.findAll();
 			tableData = new String[listNd.size()][6];
 			for(int i=0;i< listNd.size();i++) {
@@ -41,7 +40,7 @@ public class TrangChuQuanLyServlet extends HttpServlet {
 				tableData[i][3]=nd.getSoDt();
 				tableData[i][4]=nd.getGioiTinh();
 				if(nd.getVaiTro()==1) {
-					tableData[i][5]="Quản lý";
+					tableData[i][5]="Quản trị";
 				}else {
 					tableData[i][5]="Khách hàng";
 				}

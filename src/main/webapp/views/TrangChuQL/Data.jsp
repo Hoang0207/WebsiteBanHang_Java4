@@ -48,7 +48,7 @@
 							<td>${cell}</td>
 						</c:forEach>
 						<td>
-							<a href="#">Sửa</a>
+							<a href="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/sua/?id=${row[0] }">Sửa</a>
 							<a href="#">Xóa</a>
 						</td>
 					</tr>
