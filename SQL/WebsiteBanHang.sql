@@ -78,11 +78,20 @@ CREATE TABLE san_pham(
 )
 
 INSERT INTO san_pham VALUES
-	('SP001', 'Laptop Asus VivoBook 14X', 10, 23490000, 'CL002','TTDB005','NCC005',null,'hinh1.png'),
-	('SP002', 'Laptop ASUS ProArt', 5, 69490000, 'CL002','TTDB005','NCC005',null,'hinh2.png'),
-	('SP003', 'Laptop MSI Modern 14', 7, 9990000, 'CL002','TTDB005','NCC005',null,'hinh3.png'),
-	('SP004', 'Laptop Lenovo V15 G3 ABA', 15, 9990000, 'CL002','TTDB005','NCC005',null,'hinh4.png'),
-	('SP005', 'Bo mạch chủ ASUS Strix B760', 10, 4990000, 'CL002','TTDB005','NCC005',null,'hinh5.png')
+	('SP001', 'Laptop Asus VivoBook 14X', 10, 9490000, 'CL002','TTDB005','NCC005',null,'hinh1.png'),
+	('SP002', 'Laptop ASUS ProArt', 5, 9990000, 'CL002','TTDB005','NCC005',null,'hinh2.png'),
+	('SP003', 'Laptop MSI Modern 14', 7, 7890000, 'CL002','TTDB005','NCC005',null,'hinh3.png'),
+	('SP004', 'Laptop Lenovo V15 G3 ABA', 15, 6290000, 'CL002','TTDB005','NCC005',null,'hinh4.png'),
+	('SP005', 'Bo mạch chủ ASUS Strix B760', 10, 4990000, 'CL002','TTDB005','NCC005',null,'hinh5.png'),
+	('SP006', 'Máy làm sữa hạt', 15, 222300, 'CL001','TTDB002','NCC004',null,'hinh6.png'),
+	('SP007', 'Viên xương khớp Blackmores', 20, 499000, 'CL005','TTDB001','NCC001',null,'hinh7.png'),
+	('SP008', 'KEM TRANG ĐIỂM BB', 5, 2930000, 'CL003','TTDB004','NCC001',null,'hinh8.png'),
+	('SP009', 'Bánh quẩy Phô Mai', 10, 50000, 'CL004','TTDB004','NCC002',null,'hinh9.png'),
+	('SP010', 'Chắn Gió Bếp Gas', 10, 30000, 'CL001','TTDB002','NCC003',null,'hinh10.png'),
+	('SP011', 'Tách Lòng Đỏ Trứng', 10, 90000, 'CL001','TTDB002','NCC003',null,'hinh11.png'),
+	('SP012', 'Hộp đựng đũa', 10, 190000, 'CL001','TTDB003','NCC002',null,'hinh12.png'),
+	('SP013', 'Viên Uống Dầu Cá', 10, 699000, 'CL005','TTDB005','NCC002',null,'hinh13.png'),
+	('SP014', 'Bộ travel size', 10, 290000, 'CL003','TTDB005','NCC002',null,'hinh14.png')
 
 CREATE TABLE don_hang(
 	ma_don_hang INT IDENTITY(1,1) PRIMARY KEY,
