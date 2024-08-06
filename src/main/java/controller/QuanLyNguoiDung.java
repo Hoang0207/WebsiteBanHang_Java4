@@ -1,9 +1,13 @@
 package controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.List;
+
+import jakarta.servlet.http.Part;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
@@ -13,15 +17,18 @@ import org.apache.commons.beanutils.converters.DateTimeConverter;
 import dao.NguoiDungDAO;
 import entity.NguoiDung;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet({"/TrangChu/QuanLyNguoiDung/sua/*","/TrangChu/QuanLyNguoiDung/moi","/TrangChu/QuanLyNguoiDung/them","/TrangChu/QuanLyNguoiDung/xoa/*","/TrangChu/QuanLyNguoiDung/capNhat/*"})
+@MultipartConfig
 public class QuanLyNguoiDung extends HttpServlet{
 	
 	NguoiDungDAO dao = new NguoiDungDAO();
+	String fileNameToUpload = null;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,6 +54,8 @@ public class QuanLyNguoiDung extends HttpServlet{
 		dateFormat(); //Định dạng ngày cho BeanUtils
 		if(uri.contains("them")) {
 			NguoiDung nd = new NguoiDung();
+			uploadHinh(req, resp);
+			nd.setHinhAnh(fileNameToUpload);
 			try {
 				BeanUtils.populate(nd, req.getParameterMap());
 			} catch (IllegalAccessException | InvocationTargetException e) {
@@ -57,6 +66,8 @@ public class QuanLyNguoiDung extends HttpServlet{
 			dao.remove(req.getParameter("id"));
 		}else if(uri.contains("capNhat")) {
 			NguoiDung nd = new NguoiDung();
+			uploadHinh(req, resp);
+			nd.setHinhAnh(fileNameToUpload);
 			try {
 				BeanUtils.populate(nd, req.getParameterMap());
 			} catch (IllegalAccessException | InvocationTargetException e) {
@@ -97,4 +108,35 @@ public class QuanLyNguoiDung extends HttpServlet{
 		dtc.setPattern("yyyy-MM-dd");
 		ConvertUtils.register(dtc, Date.class);
 	}
+	
+	protected void uploadHinh(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException  {
+		// Đường dẫn đến thư mục lưu trữ hình ảnh
+        String uploadPath = getServletContext().getRealPath("/") + "image/NguoiDung";
+        System.out.println(uploadPath);
+        
+        // Tạo thư mục nếu chưa tồn tại
+        File uploadDir = new File(uploadPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdirs(); // Sử dụng mkdirs để tạo nhiều thư mục nếu cần
+        }
+        
+        // Lấy file được chọn
+        Part filePart = (Part) req.getPart("userImage");
+        if(filePart!=null) {
+        	try {
+        		String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+                fileNameToUpload = fileName;
+                
+                // Đường dẫn để lưu file
+                String filePath = uploadPath + File.separator + fileName;
+                
+                // Lưu file vào thư mục
+                filePart.write(filePath);
+			} catch (Exception e) {
+				fileNameToUpload = dao.findById(req.getParameter("maNguoiDung")).getHinhAnh();
+			}
+        	
+        }
+    }
 }
+

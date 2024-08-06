@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,7 @@
 <body>
 	<div class="fs-2 fst-italic fw-bolder text-center pt-4 pb-3">QUẢN
 		LÝ NGƯỜI DÙNG</div>
-	<form method="post">
+	<form method="post" enctype="multipart/form-data">
 		<div class="row mt-3 mb-4">
 			<div class="col-md-7 ps-5 pt-2">
 				<div class="input-group mb-4">
@@ -49,7 +50,8 @@
 					class="d-flex justify-content-between align-items-center mb-4 border border-secondary-subtle rounded pe-2">
 					<div class="text-bg-secondary p-2">Vai trò</div>
 					<div class="form-check">
-						<input class="form-check-input" type="radio" name="vaiTro" checked="checked"
+						<input class="form-check-input" type="radio" name="vaiTro"
+							checked="checked"
 							${nd.getVaiTro() == 1 ? 'checked' : 'unchecked'} value="1"
 							id="flexRadioDefault1"> <label class="form-check-label"
 							for="flexRadioDefault1">Quản trị</label>
@@ -65,22 +67,23 @@
 					class="d-flex justify-content-between align-items-center mb-4 border border-secondary-subtle rounded pe-2">
 					<div class="text-bg-secondary p-2">Giới tính</div>
 					<div class="form-check">
-						<input class="form-check-input" type="radio" name="gioiTinh" checked="checked"
-							${nd.getGioiTinh() == 'nam' ? 'checked' : 'unchecked'} value="nam"
-							id="flexRadioDefault1"> <label class="form-check-label"
-							for="flexRadioDefault1">Nam</label>
+						<input class="form-check-input" type="radio" name="gioiTinh"
+							checked="checked"
+							${nd.getGioiTinh() == 'nam' ? 'checked' : 'unchecked'}
+							value="nam" id="flexRadioDefault1"> <label
+							class="form-check-label" for="flexRadioDefault1">Nam</label>
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" name="gioiTinh"
-							<c:if test="${nd.getGioiTinh() == 'nữ' }">checked</c:if> value="nữ"
-							id="flexRadioDefault2"> <label class="form-check-label"
-							for="flexRadioDefault2">Nữ</label>
+							<c:if test="${nd.getGioiTinh() == 'nữ' }">checked</c:if>
+							value="nữ" id="flexRadioDefault2"> <label
+							class="form-check-label" for="flexRadioDefault2">Nữ</label>
 					</div>
 					<div class="form-check">
 						<input class="form-check-input" type="radio" name="gioiTinh"
-							<c:if test="${nd.getGioiTinh() == 'khác' }">checked</c:if> value="khác"
-							id="flexRadioDefault3"> <label class="form-check-label"
-							for="flexRadioDefault3">Khác</label>
+							<c:if test="${nd.getGioiTinh() == 'khác' }">checked</c:if>
+							value="khác" id="flexRadioDefault3"> <label
+							class="form-check-label" for="flexRadioDefault3">Khác</label>
 					</div>
 				</div>
 				<div class="input-group mb-4">
@@ -97,8 +100,20 @@
 				<div class="d-flex justify-content-center align-items-center mt-1">
 					<div class="card w-100 p-0">
 						<div class="card-body p-0">
-							<img src="/WebsiteBanHang_Java4/image/TrangChuQL/inputHinhSp.png"
-								style="height: 270px">
+							<!-- <img src="/WebsiteBanHang_Java4/image/TrangChuQL/inputHinhSp.png"
+								style="height: 270px"> -->
+							<c:choose>
+								<c:when test="${empty nd or empty nd.getHinhAnh()}">
+									<img id="preview" class="img-fluid" style="height: 270px; object-fit: contain; cursor: pointer;" 
+									src="/WebsiteBanHang_Java4/image/TrangChuQL/inputHinhSp.png" onclick="document.getElementById('fileInput').click();">
+								</c:when>
+								<c:otherwise>
+									<img id="preview" class="img-fluid" style="height: 270px; object-fit: contain; cursor: pointer;" 
+									src="/WebsiteBanHang_Java4/image/NguoiDung/${nd.getHinhAnh() }" onclick="document.getElementById('fileInput').click();">
+								</c:otherwise>
+							</c:choose>
+							
+							<input type="file" id="fileInput" name="userImage" style="display: none;" onchange="previewImage(event)">
 						</div>
 					</div>
 				</div>
@@ -107,22 +122,27 @@
 					ấn vào hình để chỉnh sửa</div>
 				<div class="row w-100 px-5">
 					<div class="col-md-6 d-flex flex-column align-items-end ps-5 pe-2">
-						<button type="submit" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/them"
+						<button type="submit"
+							formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/them"
 							class="btn btn-outline-success my-2 d-flex justify-content-center align-items-center w-75">
 							Thêm<i class="fa-solid fa-circle-plus ms-2 fs-4"></i>
 						</button>
-						<button type="submit" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/xoa/?id=${nd.getMaNguoiDung()}"
+						<button type="submit"
+							formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/xoa/?id=${nd.getMaNguoiDung()}"
 							class="btn btn-outline-danger mt-1 d-flex justify-content-center align-items-center w-75">
 							Xóa<i class="fa-regular fa-trash-can ms-2 fs-4"></i>
 						</button>
 					</div>
 					<div
 						class="col-md-6 d-flex flex-column align-items-start pe-5 ps-2">
-						<button type="submit" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/capNhat/?id=${nd.getMaNguoiDung()}"
+						<button type="submit"
+							formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/capNhat/?id=${nd.getMaNguoiDung()}"
 							class="btn btn-outline-warning my-2 d-flex justify-content-center align-items-center w-75">
 							Sửa<i class="fa-solid fa-pencil ms-2 fs-4"></i>
 						</button>
-						<button type="submit" formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/moi" formethod="get"
+						<button type="submit"
+							formaction="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/moi"
+							formethod="get"
 							class="btn btn-outline-secondary mt-1 d-flex justify-content-center align-items-center w-75">
 							Mới<img src="/WebsiteBanHang_Java4/image/TrangChuQL/newIcon.png"
 								style="height: 25px" class="ms-2">
@@ -140,6 +160,17 @@
 
 	<jsp:include page="Data.jsp" />
 
+
+	<script>
+		function previewImage(event) {
+			var reader = new FileReader();
+			reader.onload = function() {
+				var output = document.getElementById('preview');
+				output.src = reader.result;
+			}
+			reader.readAsDataURL(event.target.files[0]);
+		}
+	</script>
 
 	<script src="https://kit.fontawesome.com/c6bc02ad3b.js"
 		crossorigin="anonymous"></script>
