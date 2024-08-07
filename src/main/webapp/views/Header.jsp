@@ -170,7 +170,8 @@ table th {
 
 <body>
 	<c:choose>
-		<c:when test="${not empty sessionScope.user and sessionScope.user.vaiTro==0 }">
+		<c:when
+			test="${not empty sessionScope.user and sessionScope.user.vaiTro==0 }">
 			<nav class="navbar navbar-expand-lg py-1">
 				<div
 					class="container-fluid d-flex justify-content-between align-items-center">
@@ -203,10 +204,11 @@ table th {
 								</a>
 								<ul class="dropdown-menu" aria-labelledby="dropdownAccount">
 									<li><a class="dropdown-item"
-										href="/WebsiteBanHang_Java4/ThongTinTaiKhoanServlet">Thông tin
-											tài khoản</a></li>
+										href="/WebsiteBanHang_Java4/ThongTinTaiKhoanServlet">Thông
+											tin tài khoản</a></li>
 									<li><a class="dropdown-item"
-										href="/WebsiteBanHang_Java4/LichSuMuaHangServlet">Lịch sử mua hàng</a></li>
+										href="/WebsiteBanHang_Java4/LichSuMuaHangServlet">Lịch sử
+											mua hàng</a></li>
 									<li><a class="dropdown-item"
 										href="/WebsiteBanHang_Java4/DangXuatServlet">Đăng xuất</a></li>
 								</ul>
@@ -224,8 +226,9 @@ table th {
 			</nav>
 
 		</c:when>
-		<c:when test="${not empty sessionScope.user and sessionScope.user.vaiTro==1 }">
-				<nav class="navbar navbar-expand-lg py-1">
+		<c:when
+			test="${not empty sessionScope.user and sessionScope.user.vaiTro==1 }">
+			<nav class="navbar navbar-expand-lg py-1">
 				<div
 					class="container-fluid d-flex justify-content-between align-items-center">
 					<a class="navbar-brand ms-4" href="/WebsiteBanHang_Java4/TrangChu">
@@ -257,15 +260,16 @@ table th {
 								</a>
 								<ul class="dropdown-menu" aria-labelledby="dropdownAccount">
 									<li><a class="dropdown-item"
-										href="/WebsiteBanHang_Java4/TrangChu/QuanLySanPham">Quản lý</a></li>
+										href="/WebsiteBanHang_Java4/TrangChu/QuanLySanPham">Quản
+											lý</a></li>
 									<li><a class="dropdown-item"
 										href="/WebsiteBanHang_Java4/DangXuat">Đăng xuất</a></li>
 								</ul>
 							</div>
-								
+
 							<img src="/WebsiteBanHang_Java4/image/Line.png"
-								style="height: 50px" class="me-4">	
-							<a class="me-4 text-primary text-decoration-none fs-3"
+								style="height: 50px" class="me-4"> <a
+								class="me-4 text-primary text-decoration-none fs-3"
 								href="/WebsiteBanHang_Java4/TrangChu/QuanLySanPham"> <i
 								class="fa-solid fa-list-check me-1"></i>Quản lý
 							</a>
@@ -330,31 +334,39 @@ table th {
 										data-bs-target="#staticBackdrop">Tạo tài khoản</a>
 								</div>
 							</ul>
-							<div class="container mt-4">
-								<div class="form-floating mb-3">
-									<input type="text" class="form-control form-control-no-border"
-										name="phone" id="phone" placeholder="phone"> <label
-										for="phone">Số điện thoại</label>
+							<form action="/WebsiteBanHang_Java4/dangNhap" method="post">
+								<div class="container mt-4">
+									<div class="form-floating mb-3">
+										<input type="text" class="form-control form-control-no-border"
+											name="taiKhoan" id="phone" placeholder="phone"> <label
+											for="phone">Tài khoản</label>
+									</div>
+									<div class="form-floating">
+										<input type="password"
+											class="form-control form-control-no-border" name="matKhau"
+											id="Password" placeholder="Password"> <label
+											for="Password">Mật khẩu</label>
+										<p>
+											<a href="GuiMa.jsp"
+												class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+												data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Bạn
+												quên mật khẩu?</a>
+										</p>
+									</div>
 								</div>
-								<div class="form-floating">
-									<input type="password"
-										class="form-control form-control-no-border" name="Password"
-										id="Password" placeholder="Password"> <label
-										for="Password">Mật khẩu</label> <a
-										<p><a href="GuiMa.jsp" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Bạn quên mật khẩu?</a></p>
-								</div>
-							</div>
-							<br>
-							<div
-								class="container d-flex justify-content-center mt-4 bg-white p-3">
-								<a href="DangNhap.jsp"
-									class="btn btn-outline-danger border-0 me-2"> <i
-									class="fa-solid fa-right-to-bracket"></i>
-								</a>
+								<br>
+								<div
+									class="container d-flex justify-content-center mt-4 bg-white p-3">
+									<button type="submit"
+										class="btn btn-outline-danger border-0 me-2">
+										<i class="fa-solid fa-right-to-bracket"></i>
+									</button>
 
 
-							</div>
+								</div>
 						</div>
+						</form>
+
 
 
 						<div class="col-6 col-md-6">

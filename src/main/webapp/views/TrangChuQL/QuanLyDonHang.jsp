@@ -11,23 +11,27 @@
 <body>
 	<div class="fs-2 fst-italic fw-bolder text-center pt-4 pb-3">QUẢN
 		LÝ ĐƠN HÀNG</div>
+	<form method="get">
 	<div class="row mt-3 mb-4">
 		<div class="col-md-6 ps-5 pt-2">
 			<div class="input-group mb-4">
 				<span class="input-group-text text-bg-secondary" id="basic-addon1">Mã
 					đơn hàng</span> <input type="text" class="form-control" placeholder=""
-					aria-label="Username" aria-describedby="basic-addon1">
+					aria-label="Username" value="${dh.getMaDh() }"
+					aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group mb-4">
 				<span class="input-group-text text-bg-secondary" id="basic-addon1">Mã
-					người dùng</span> <input type="text" class="form-control" placeholder=""
+					người dùng</span> <input type="text" value="${dh.getDonHangNguoiDung().getMaNguoiDung() }"
+					class="form-control" placeholder=""
 					aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 		</div>
 		<div class="col-md-6 ps-4 pt-2 pe-5">
 			<div class="input-group mb-4">
 				<span class="input-group-text text-bg-secondary" id="basic-addon1">Ngày
-					tạo đơn</span> <input type="text" class="form-control" placeholder=""
+					tạo đơn</span> <input type="text" value="${dh.getNgay_lap_don_hang() }"
+					class="form-control" placeholder=""
 					aria-label="Username" aria-describedby="basic-addon1">
 			</div>
 			<div class="d-flex justify-content-end">
@@ -38,6 +42,8 @@
 			</div>
 		</div>
 	</div>
+	
+	</form>
 	<%@include file="Data.jsp"%>
 
 

@@ -60,7 +60,8 @@
 									<a href="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/xoa/?id=${row[0]}">Xóa</a>
 								</c:when>
 								<c:when test="${uri == 'donhang'}">
-						
+									<a href="/WebsiteBanHang_Java4/TrangChu/QuanLyDonHang/sua/?id=${row[0] }">Sửa</a>
+									<a href="/WebsiteBanHang_Java4/TrangChu/QuanLyDonHang/xoa/?id=${row[0]}">Xóa</a>
 								</c:when>
 								<c:when test="${uri == 'chungloai'}">
 						

@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import dao.DonHangDAO;
 import dao.NguoiDungDAO;
 import dao.SanPhamDAO;
+import entity.DonHang;
 import entity.NguoiDung;
 import entity.SanPham;
 import jakarta.servlet.ServletContext;
@@ -22,6 +24,7 @@ public class TrangChuQuanLyServlet extends HttpServlet {
 	
 	NguoiDungDAO ndDAO = new NguoiDungDAO();
 	SanPhamDAO spDAO = new SanPhamDAO();
+	DonHangDAO dhDAO = new DonHangDAO();
 	String[] tableHeader = null;
 	String[][] tableData = null;
 	
@@ -34,7 +37,7 @@ public class TrangChuQuanLyServlet extends HttpServlet {
 		} else if (uri.contains("QuanLyNguoiDung")) { 
 			quanLyNguoiDung(req, resp);
 		} else if (uri.contains("QuanLyDonHang")) {
-			req.setAttribute("uri", "donhang");
+			quanLyDonHang(req, resp);
 		} else if (uri.contains("QuanLyChungLoai")) {
 			req.setAttribute("uri", "chungloai");
 		} else if (uri.contains("QuanLyNhaCungCap")) {
@@ -85,4 +88,16 @@ public class TrangChuQuanLyServlet extends HttpServlet {
 		}
 	}
 
+	protected void quanLyDonHang(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getSession().setAttribute("uri", "donhang");
+		tableHeader = new String[] {"Mã đơn hàng","Ngày lập đơn hàng","Mã người dùng","Hành động"};
+		List<DonHang> listDh = dhDAO.findAll();
+		tableData = new String[listDh.size()][3];
+		for(int i=0;i< listDh.size();i++) {
+			DonHang dh = listDh.get(i);
+			tableData[i][0]=String.valueOf(dh.getMaDh());
+			tableData[i][1]=String.valueOf(dh.getNgay_lap_don_hang());
+			tableData[i][2]=dh.getDonHangNguoiDung().getMaNguoiDung();
+		}
+	}
 }
