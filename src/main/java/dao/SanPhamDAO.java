@@ -20,6 +20,40 @@ public class SanPhamDAO {
 		return em.find(SanPham.class, id);
 	}
 	
+	public void create(SanPham sp) {
+		em.getTransaction().begin();
+		try {
+			em.persist(sp);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+		}
+	}
+	
+	public void update(SanPham sp) {
+		em.getTransaction().begin();
+		try {
+			em.merge(sp);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+		}
+	}
+	
+	public void remove(String id) {
+		SanPham sp = findById(id);
+		if(sp!=null) {
+			em.getTransaction().begin();
+			try {
+				em.remove(sp);
+				em.getTransaction().commit();
+			} catch (Exception e) {
+				em.getTransaction().rollback();
+			}
+		}
+	}
+	
+	
 	public List<SanPham> getSanPhamTheoTrang(int trang, int soSanPhamMoiTrang){
 		TypedQuery<SanPham> query = em.createQuery("From SanPham", SanPham.class);
 		query.setFirstResult((trang-1)*soSanPhamMoiTrang);

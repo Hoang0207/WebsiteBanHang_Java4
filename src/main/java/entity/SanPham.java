@@ -39,6 +39,9 @@ public class SanPham {
 	@Column(name = "hinh_anh")
 	private String hinhAnh;
 	
+	@Column(name="mo_ta")
+	private String moTa;
+	
 	@OneToMany(mappedBy = "donHangSanPham")
 	List<ChiTietDonHang> listChiTietDonHang;
 	
@@ -134,6 +137,14 @@ public class SanPham {
 
 	public void setListGioHang(List<GioHang> listGioHang) {
 		this.listGioHang = listGioHang;
+	}
+
+	public String getMoTa() {
+		return moTa;
+	}
+
+	public void setMoTa(String moTa) {
+		this.moTa = moTa;
 	}
 	
 }

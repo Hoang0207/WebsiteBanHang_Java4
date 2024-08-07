@@ -82,16 +82,16 @@ INSERT INTO san_pham VALUES
 	('SP002', 'Laptop ASUS ProArt', 5, 9990000, 'CL002','TTDB005','NCC005',null,'hinh2.png'),
 	('SP003', 'Laptop MSI Modern 14', 7, 7890000, 'CL002','TTDB005','NCC005',null,'hinh3.png'),
 	('SP004', 'Laptop Lenovo V15 G3 ABA', 15, 6290000, 'CL002','TTDB005','NCC005',null,'hinh4.png'),
-	('SP005', 'Bo mạch chủ ASUS Strix B760', 10, 4990000, 'CL002','TTDB005','NCC005',null,'hinh5.png'),
-	('SP006', 'Máy làm sữa hạt', 15, 222300, 'CL001','TTDB002','NCC004',null,'hinh66.png'),
-	('SP007', 'Viên xương khớp Blackmores', 20, 499000, 'CL005','TTDB001','NCC001',null,'hinh77.png'),
-	('SP008', 'KEM TRANG ĐIỂM BB', 5, 2930000, 'CL003','TTDB004','NCC001',null,'hinh88.png'),
-	('SP009', 'Bánh quẩy Phô Mai', 10, 50000, 'CL004','TTDB004','NCC002',null,'hinh99.png'),
-	('SP010', 'Chắn Gió Bếp Gas', 10, 30000, 'CL001','TTDB002','NCC003',null,'hinh110.png'),
-	('SP011', 'Tách Lòng Đỏ Trứng', 10, 90000, 'CL001','TTDB002','NCC003',null,'hinh111.png'),
-	('SP012', 'Hộp đựng đũa', 10, 190000, 'CL001','TTDB003','NCC002',null,'hinh122.png'),
-	('SP013', 'Viên Uống Dầu Cá', 10, 699000, 'CL005','TTDB005','NCC002',null,'hinh133.png'),
-	('SP014', 'Bộ travel size', 10, 290000, 'CL003','TTDB005','NCC002',null,'hinh144.png')
+	('SP005', N'Bo mạch chủ ASUS Strix B760', 10, 4990000, 'CL002','TTDB005','NCC005',null,'hinh5.png'),
+	('SP006', N'Máy làm sữa hạt', 15, 222300, 'CL001','TTDB002','NCC004',null,'hinh66.png'),
+	('SP007', N'Viên xương khớp Blackmores', 20, 499000, 'CL005','TTDB001','NCC001',null,'hinh77.png'),
+	('SP008', N'KEM TRANG ĐIỂM BB', 5, 2930000, 'CL003','TTDB004','NCC001',null,'hinh88.png'),
+	('SP009', N'Bánh quẩy Phô Mai', 10, 50000, 'CL004','TTDB004','NCC002',null,'hinh99.png'),
+	('SP010', N'Chắn Gió Bếp Gas', 10, 30000, 'CL001','TTDB002','NCC003',null,'hinh110.png'),
+	('SP011', N'Tách Lòng Đỏ Trứng', 10, 90000, 'CL001','TTDB002','NCC003',null,'hinh111.png'),
+	('SP012', N'Hộp đựng đũa', 10, 190000, 'CL001','TTDB003','NCC002',null,'hinh122.png'),
+	('SP013', N'Viên Uống Dầu Cá', 10, 699000, 'CL005','TTDB005','NCC002',null,'hinh133.png'),
+	('SP014', N'Bộ travel size', 10, 290000, 'CL003','TTDB005','NCC002',null,'hinh144.png')
 
 CREATE TABLE don_hang(
 	ma_don_hang INT IDENTITY(1,1) PRIMARY KEY,

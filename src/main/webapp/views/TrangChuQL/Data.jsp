@@ -52,7 +52,8 @@
 						<td>
 							<c:choose>
 								<c:when test="${uri == 'sanpham'}">
-					
+									<a href="/WebsiteBanHang_Java4/TrangChu/QuanLySanPham/sua/?id=${row[0] }">Sửa</a>
+									<a href="/WebsiteBanHang_Java4/TrangChu/QuanLySanPham/xoa/?id=${row[0]}">Xóa</a>
 								</c:when>
 								<c:when test="${uri == 'nguoidung'}">
 									<a href="/WebsiteBanHang_Java4/TrangChu/QuanLyNguoiDung/sua/?id=${row[0] }">Sửa</a>
