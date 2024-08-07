@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,14 +23,11 @@
 				data-bs-parent="#accordionExample">
 				<div class="accordion-body p-0">
 					<div class="list-group rounded-0">
-						<a class="list-group-item list-group-item-action text-secondary"
-							ng-click="catergoryFillter('Bo mạch chủ')">Đồ gia dụng</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="catergoryFillter('Laptop')">Đồ điện tử</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="catergoryFillter('Card màn hình')">Mỹ phẩm</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="catergoryFillter('Màn hình')">Thực phẩm chức năng</a>
+						<c:forEach var="chungLoai" items="${listChungLoai}">
+							<a href="/WebsiteBanHang_Java4/TrangChu/Loc/?keyName=chungLoai.maCl&id=${chungLoai.getMaCl() }"
+								class="list-group-item list-group-item-action text-secondary">
+								${chungLoai.getTenCl()} </a>
+						</c:forEach>
 					</div>
 				</div>
 			</div>
@@ -46,14 +44,11 @@
 				data-bs-parent="#accordionExample">
 				<div class="accordion-body p-0">
 					<div class="list-group rounded-0">
-						<a class="list-group-item list-group-item-action text-secondary"
-							ng-click="supplierFillter('Asus')">Asus</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="supplierFillter('Gigabyte')">Gigabyte</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="supplierFillter('Msi')">Msi</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="supplierFillter('Lenovo')">Lenovo</a>
+						<c:forEach var="nhaCungCap" items="${listNhaCungCap}">
+							<a href="/WebsiteBanHang_Java4/TrangChu/Loc/?keyName=nhaCungCap.maNhaCungCap&id=${nhaCungCap.getMaNhaCungCap()}"
+								class="list-group-item list-group-item-action text-secondary">
+								${nhaCungCap.getTenNhaCungCap()} </a>
+						</c:forEach>
 					</div>
 				</div>
 			</div>
@@ -70,14 +65,11 @@
 				data-bs-parent="#accordionExample">
 				<div class="accordion-body p-0 rounded-0">
 					<div class="list-group">
-						<a class="list-group-item list-group-item-action text-secondary"
-							ng-click="specialFillter('Hàng bán chạy')">Hàng bán chạy</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="specialFillter('Hàng mới')">Hàng mới</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="specialFillter('Hàng giảm giá')">Hàng giảm giá</a> <a
-							class="list-group-item list-group-item-action text-secondary"
-							ng-click="specialFillter('Hàng xem nhiều')">Hàng xem nhiều</a>
+						<c:forEach var="TTDB" items="${listTTDB}">
+							<a href="/WebsiteBanHang_Java4/TrangChu/Loc/?keyName=ttdb.maTTDB&id=${TTDB.getMaTTDB() }"
+								class="list-group-item list-group-item-action text-secondary">
+								${TTDB.getTenTTDB()} </a>
+						</c:forEach>
 					</div>
 				</div>
 			</div>
