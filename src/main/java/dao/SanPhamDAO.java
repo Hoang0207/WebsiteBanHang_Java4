@@ -32,4 +32,10 @@ public class SanPhamDAO {
 		return query.getSingleResult();
 	}
 	
+	public List<SanPham> locSanPham(String keyName, String name){
+		TypedQuery<SanPham> query = em.createQuery("Select o from SanPham o where o."+keyName+"=:name",SanPham.class);
+		query.setParameter("name", name);
+		return query.getResultList();
+	}
+	
 }
